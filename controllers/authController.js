@@ -37,7 +37,8 @@ exports.loginUser = async (req, res) => {
       }
 
       //USER SESSION
-      res.status(200).send('YOU ARE LOGGED IN');
+      req.session.userID = user._id;
+      res.status(200).redirect('/');
 
   } catch (error) {
     res.status(400).json({
