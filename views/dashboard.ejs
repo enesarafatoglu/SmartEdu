@@ -112,7 +112,7 @@
 						<form method="POST" action="/courses" class="form-horizontal">
 							<div class="form-group">
 								<div class="col-sm-12">
-									<input type="text" name="name" class="form-control" placeholder="Course Name">
+									<input type="text" name="name" class="form-control text-info font-weight-bold" placeholder="Course Name">
 								</div>
 							</div>
 							<div class="form-group">
@@ -122,13 +122,13 @@
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<textarea rows="8" name="description" class="form-control"
+									<textarea rows="8" name="description" class="form-control text-info font-weight-bold"
 									placeholder="Course Description" required></textarea>
 								</div>
 							</div>
 							<div class="form-group">
 								<div class="col-sm-12">
-									<select class="form-control" name="category">
+									<select class="form-control text-info font-weight-bold" name="category">
 										<% for(let i = 0; i < categories.length; i++) { %>
 										<option value="<%= categories[i]._id %>"><%= categories[i].name %></option>
 										<% } %>
