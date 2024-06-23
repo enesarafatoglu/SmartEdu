@@ -102,3 +102,16 @@ exports.releaseCourse = async (req, res) => {
     });
   }
 };
+
+exports.deleteCourse = async (req, res) => {
+  try {
+    const course = await Course.findOneAndDelete({slug: req.params.slug});
+    req.flash("success", `${course.name} has been removed successfully`);
+    res.status(200).redirect('/users/dashboard')
+  } catch (error) {
+    res.status(400).json({
+      status: 'fail',
+      error,
+    });
+  }
+};
